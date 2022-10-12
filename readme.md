@@ -1,6 +1,6 @@
-### Use
+### RUN
 ```bash
-python3 server.py
+nohup python3 server.py &
 ```
 - ``http://localhost:8000?url={URL}&ref=[referer]``
 
