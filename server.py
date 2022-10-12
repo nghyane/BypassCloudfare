@@ -15,6 +15,11 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
         print(self.requestline)
         qs = parse_qs(self.path[2:])
+
+        if 'url' not in qs:
+            self.wfile.write('URL not found!'.encode())
+            return
+
         url = (qs['url'][0])
 
         if 'ref' in qs:
