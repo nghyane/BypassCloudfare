@@ -1,6 +1,6 @@
 ### Use
 ```bash
-&python server.py
+py server.py
 ```
 - ``http://localhost:8000?url={URL}&ref=[referer]``
 
@@ -11,6 +11,7 @@ git clone https://github.com/nghyane/BypassCloudfare.git
 ### Install
 
 ```bash
+cd BypassCloudfare
 pip install -r requirements.txt
 ```
 
