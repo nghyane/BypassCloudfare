@@ -11,6 +11,7 @@ git clone https://github.com/nghyane/BypassCloudfare.git
 ### Install
 
 ```bash
+cd BypassCloudfare
 pip install -r requirements.txt
 ```
 
