@@ -1,6 +1,11 @@
 ### Use
 ```bash
-python server.py
+&python server.py
+```
+
+### Clone Project
+```bash
+git clone https://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@github.com/nghyane/BypassCloudfare.git
 ```
 ### Install
 
