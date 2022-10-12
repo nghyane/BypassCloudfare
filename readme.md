@@ -2,10 +2,11 @@
 ```bash
 &python server.py
 ```
+- ``http://localhost:8000?url={URL}&ref=[referer]``
 
 ### Clone Project
 ```bash
-git clone https://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@github.com/nghyane/BypassCloudfare.git
+git clone https://github.com/nghyane/BypassCloudfare.git
 ```
 ### Install
 
