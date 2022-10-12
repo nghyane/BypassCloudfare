@@ -1,2 +1,1 @@
 cloudscraper==1.2.64
-Pillow==9.2.0
