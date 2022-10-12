@@ -1,6 +1,6 @@
 ### Use
 ```bash
-py server.py
+python3 server.py
 ```
 - ``http://localhost:8000?url={URL}&ref=[referer]``
 
