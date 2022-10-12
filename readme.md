@@ -2,6 +2,7 @@
 ```bash
 &python server.py
 ```
+- ``http://localhost:8000?url={URL}&ref=[referer]``
 
 ### Clone Project
 ```bash
