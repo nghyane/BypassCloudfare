@@ -1,6 +1,7 @@
 ### RUN
 ```bash
-nohup python3 server.py &
+python3 -u server.py > backgroundlog &
+ps ax | grep server.py
 ```
 - ``http://localhost:8000?url={URL}&ref=[referer]``
 
