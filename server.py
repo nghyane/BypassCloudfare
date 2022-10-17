@@ -12,36 +12,39 @@ PORT = 8000
 
 class Handler(http.server.BaseHTTPRequestHandler):
     # Handler for the GET requests
+
     def do_GET(self):
-        print(self.requestline)
-        qs = parse_qs(self.path[2:])
+        try:
+            print(self.requestline)
+            qs = parse_qs(self.path[2:])
 
-        if 'url' not in qs:
-            self.wfile.write('URL not found!'.encode())
+            if 'url' not in qs:
+                self.wfile.write('URL not found!'.encode())
+                return
+
+            url = (qs['url'][0])
+
+            if 'ref' in qs:
+                ref = (qs['ref'][0])
+            else:
+                ref = url
+
+            res = bypass(url, ref)
+            headers = res.headers
+
+            self.send_response(res.status_code)
+            self.send_header('Content-type', headers['Content-Type'])
+            self.end_headers()
+
+            if "image" in headers['Content-Type']:
+                with io.BytesIO(res.content) as file_handle:
+                    content = (file_handle.getvalue())
+            else:
+                content = res.text.encode()
+
+            self.wfile.write(content)
+        finally:
             return
-
-        url = (qs['url'][0])
-
-        if 'ref' in qs:
-            ref = (qs['ref'][0])
-        else:
-            ref = url
-
-        res = bypass(url, ref)
-        headers = res.headers
-
-        self.send_response(res.status_code)
-        self.send_header('Content-type', headers['Content-Type'])
-        self.end_headers()
-
-        if "image" in headers['Content-Type']:
-            with io.BytesIO(res.content) as file_handle:
-                content = (file_handle.getvalue())
-        else:
-            content = res.text.encode()
-
-        self.wfile.write(content)
-        return
 
 
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
