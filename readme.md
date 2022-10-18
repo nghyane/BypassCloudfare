@@ -1,6 +1,12 @@
-### Use
+### Require
+  - fast deloy in Unbuntu 20
+  - Python3
+  - Pip
+
+### RUN
 ```bash
-py server.py
+python3 -u server.py > backgroundlog &
+ps ax | grep server.py
 ```
 - ``http://localhost:8000?url={URL}&ref=[referer]``
 
@@ -12,18 +18,18 @@ git clone https://github.com/nghyane/BypassCloudfare.git
 
 ```bash
 cd BypassCloudfare
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 ### pip install
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py
+python3 get-pip.py
 ```
 
 ### For dev
 - auto create requirements
 ```bash 
-pip install pipreqs
+python3 -m pip install pipreqs
 pipreqs .
 ```
